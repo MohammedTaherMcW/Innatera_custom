@@ -16,14 +16,14 @@
 
 /* eslint-disable no-constant-condition, no-case-declarations */
 
-import * as actions from './actions';
+import * as actions from './actions.js';
 import { notifyError } from '../modules/core/actions.js';
 
 import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 
-import { INPUT_FILTER_DELAY } from '../config';
+import { INPUT_FILTER_DELAY } from '../../config.js';
 
-import { backendFetchData } from './backend';
+import { backendFetchData } from './backend.js';
 
 import customSagas from '../modules/custom/sagas.jsx';
 import coreSagas from '../modules/core/sagas.jsx';

@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import { createStore } from 'redux';
-import * as store from '../store/index.js'
-import Custom from '../modules/custom/containers/custom.jsx';
+import * as store from './store/index.js'
+import Custom from './modules/custom/containers/custom.jsx';
 
 
 window.addEventListener('error', (err) => {

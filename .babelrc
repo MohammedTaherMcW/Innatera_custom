@@ -1,6 +1,6 @@
 {
   "presets": ["@babel/react"],
-    "plugins": [
+  "plugins": [
     ["import", {"libraryName": "antd", "libraryDirectory": "es", "style": true}],
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-function-bind",

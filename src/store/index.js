@@ -18,7 +18,7 @@ import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 import { loadStore, resetStore } from './actions';
 
-import { BACKEND_ENDPOINT } from '../config';
+import { BACKEND_ENDPOINT } from '../../config';
 import { backendMiddleware } from './backend';
 import { crashReporterMiddleware } from './middlewares';
 import rootReducer from './reducers';
@@ -35,6 +35,7 @@ export function getStore() {
 
 export function configureStore(initialState) {
   const sagaMiddleware = createSagaMiddleware();
+  console.log("BackEnd Point", BACKEND_ENDPOINT)
   const middlewares = [
     crashReporterMiddleware,
     backendMiddleware({

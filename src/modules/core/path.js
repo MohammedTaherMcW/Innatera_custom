@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { IS_WINDOWS } from '../../config';
+import { IS_WINDOWS } from '../../../config';
 
 export const sep = IS_WINDOWS ? '\\' : '/';
 

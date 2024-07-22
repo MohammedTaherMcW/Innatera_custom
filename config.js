@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 export const IS_WINDOWS =
-  navigator && navigator.platform && navigator.platform.startsWith('Win');
+navigator && navigator.platform && navigator.platform.startsWith('Win');
+console.log("ISWINDOWS",IS_WINDOWS)
 export const INPUT_FILTER_DELAY = 300; // ms, dalay before filtering projects, libs, platorms
 export const PLATFORMIO_API_ENDPOINT = 'https://api.platformio.org';
 
@@ -29,4 +29,6 @@ if (process.env.NODE_ENV === 'production' && window.location && window.location.
     window.location.host
   }${pathname}wsrpc`;
 }
+console.log("Weblink",wsrpc)
+console.log("pathname", pathname)
 export const BACKEND_ENDPOINT = wsrpc;
