@@ -47,7 +47,26 @@ function* watchCustomTargets() {
   }
 }
 
+function* watchFetchTargets() {
+  while(true)  {
+    const { targets } = yield take(actions.SEND_TARGETS);
+    let err,
+      result = null;
+    try {
+      console.log("Targets",targets);
+      result = yield call(backendFetchData, {
+        query: 'ide.send_command',
+        params: [ "get_custom_targets", targets ],
+      });
+    } catch (_err) {
+      err = _err;
+      console.error('Error in Fetching the targets for project:', err);
+    }
+  }
+}
+
 
 export default [
-  watchCustomTargets
+  watchCustomTargets,
+  watchFetchTargets
 ]
