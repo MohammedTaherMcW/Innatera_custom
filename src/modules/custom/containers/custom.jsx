@@ -16,7 +16,7 @@ class Custom extends React.Component {
     }
     render() {        
         return (
-                <Form>
+                <Form onSubmit={(e) => {e.preventDefault(); this.sendtargets(this.state.targets); window.location.reload();}}>
                     <h1>Custom Targets</h1>
                     <Form.Item
                         label="Targets"
@@ -34,7 +34,6 @@ class Custom extends React.Component {
                         <Input
                             type="submit"
                             value="Submit"
-                            onClick={() => this.sendtargets(this.state.targets)}
                         />
                     </Form.Item>
                 </Form>
