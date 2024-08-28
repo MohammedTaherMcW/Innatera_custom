@@ -35,7 +35,6 @@ export function getStore() {
 
 export function configureStore(initialState) {
   const sagaMiddleware = createSagaMiddleware();
-  console.log("BackEnd Point", BACKEND_ENDPOINT)
   const middlewares = [
     crashReporterMiddleware,
     backendMiddleware({

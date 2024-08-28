@@ -29,7 +29,7 @@ module.exports = {
   "settings": {
     "import/resolver": {
       "webpack": {
-        "config": "scripts/webpack.dev.config.js"
+        "config": "./webpack.config.js"
       }
     },
     "import/ignore": [

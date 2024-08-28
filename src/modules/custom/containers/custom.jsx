@@ -1,9 +1,8 @@
 import * as actions from '../actions';
-import * as path from '../../core/path';
-import { Form, Icon, Input,Tooltip } from 'antd';
+import { Form, Input,Tooltip } from 'antd';
 // filename app.js
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { InfoCircleTwoTone } from '@ant-design/icons';
 
 import React from 'react';

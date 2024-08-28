@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import * as store from './store/index.js'
+import * as store from './store/index.js';
 import Custom from './modules/custom/containers/custom.jsx';
-
+import {reportException } from './modules/core/helpers.js';
 
 window.addEventListener('error', (err) => {
   if (reportException) {
     reportException(err, true);
   } else {
-    console.error("ReportException not defined");
+    console.error('ReportException not defined');
   }
 });
 

@@ -4,16 +4,9 @@ import * as coreActions from '../core/actions';
 
 import {
   call,
-  delay,
   put,
-  race,
-  select,
   take,
-  takeEvery,
-  takeLatest,
 } from 'redux-saga/effects';
-import React from 'react';
-import ReactGA from 'react-ga';
 import { backendFetchData } from '../../store/backend';
 
 
@@ -23,7 +16,6 @@ function* watchCustomTargets() {
     let err,
       result = null;
     try {
-      console.log("Targets",targets);
       result = yield call(backendFetchData, {
         query: 'targets.fetch',
         params: [ targets ],
@@ -53,14 +45,21 @@ function* watchFetchTargets() {
     let err,
       result = null;
     try {
-      console.log("Targets",targets);
       result = yield call(backendFetchData, {
         query: 'ide.send_command',
-        params: [ "get_custom_targets", targets ],
+        params: [ 'get_custom_targets', targets ],
       });
     } catch (_err) {
       err = _err;
       console.error('Error in Fetching the targets for project:', err);
+    } finally {
+      if (result) {
+        yield put(
+          coreActions.notifySuccess(
+            'Target has been Successfully fetched',
+          )
+        );
+      }
     }
   }
 }
@@ -69,4 +68,4 @@ function* watchFetchTargets() {
 export default [
   watchCustomTargets,
   watchFetchTargets
-]
+];
