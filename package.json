@@ -4,7 +4,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "NODE_ENV=production webpack --config webpack.config.js --progress --profile --color"
+    "build": "NODE_ENV=production webpack --config webpack.config.js --progress --profile --color",
+    "lint": "eslint --ext js --ext jsx src",
+    "format": "prettier --write \"app/**/*.js*\" \"app/**/*.less\"",
+    "sizeinspect": "ANALYZE=1 npm run build"
   },
   "keywords": [],
   "author": "",
